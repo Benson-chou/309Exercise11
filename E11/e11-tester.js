@@ -17,6 +17,7 @@ function isValidBaseUrl(url) {
 async function runAutoTester() {
   try {
     if (typeof getBaseUrl !== "function" || typeof getUTorId !== "function") {
+      // console.log("no good")
       throw new Error(
         "The required functions are not exported from the script."
       );
@@ -46,6 +47,7 @@ async function runAutoTester() {
 
     // Check if the response status is 200 OK
     if (response.status !== 200) {
+      console.log("no good")
       throw new Error(
         `Expected status 200, but got ${response.status} from ${baseUrl}/csc309-e11`
       );
@@ -57,6 +59,7 @@ async function runAutoTester() {
     // Use a regex to find the div with id="auto-tester"
     const autoTesterDivRegex = /<div id="auto-tester">([\s\S]*?)<\/div>/;
     const match = htmlContent.match(autoTesterDivRegex);
+    console.log(match[1]);
 
     if (match && match.length > 1) {
       const expectedContent = `Hi. I am ${uTorId}, and I have learned how to develop a full-stack web app and deploy it!`;

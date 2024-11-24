@@ -1,6 +1,6 @@
-function getAppUrl() {
+function getBaseUrl() {
     // return the URL of your deployed serverless app.
-    return "https://vpi7pd85rk.execute-api.ca-central-1.amazonaws.com/default/script"
+    return "https://csc309e11-evmrssmr9-benson-chous-projects.vercel.app/"
   }
   
   function getUTorId() {
@@ -9,7 +9,7 @@ function getAppUrl() {
   }
   
   module.exports = {
-    getAppUrl,
+    getBaseUrl,
     getUTorId,
   };
 
